@@ -1,21 +1,19 @@
 import { v4 as uuidv4 } from 'uuid'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 import { Container, ToDoList, InputTask, Task, Trash, Check } from './styles.js'
 
 function App() {
 
   const [list, setList] = useState([])
-  const [task, setTask] = useState()
+  const input = useRef()
 
-  function takeTask(event) {
-    setTask(event.target.value)
-
-  }
   function addTask() {
-    if (task) {
-      setList([...list, { id: uuidv4(), task, finished: false }])
+    if (input.current.value) {
+      setList([...list, { id: uuidv4(), task: input.current.value, finished: false }])
+      input.current.value = ""
     }
+    
   }
   function finalizarTarefa(id) {
     const newList = list.map(item => (
@@ -32,9 +30,10 @@ function App() {
   return (
     <Container>
       <ToDoList>
+        <h1>#todo</h1>
         <InputTask>
-          <input onChange={takeTask} type="text" placeholder="O que tenho para fazer..." />
-          <button onClick={addTask}>Adicionar</button>
+          <input ref={input} type="text" placeholder="adicionar tarefas..." />
+          <button onClick={addTask}>Add</button>
         </InputTask>
         <ul>
           {

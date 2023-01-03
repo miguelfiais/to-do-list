@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         list-style: none;
         outline: none;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Montserrat', sans-serif;
     }
 `
 export default GlobalStyles
