@@ -12,7 +12,7 @@ Projeto desenvolvido no DevClub, com a finalidade de aprender React, neste proje
 
 - [Aplicação](https://todolistreactm.netlify.app/)
 
-<img src="https://github.com/miguelfiais/to-do-list/blob/main/src/templateToDo.png"/>
+<img src="https://github.com/miguelfiais/to-do-list/blob/main/.github/template.png"/>
 
 ## :rocket: Features ##
 * Alterar tarefa.
